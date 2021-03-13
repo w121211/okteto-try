@@ -12,7 +12,7 @@ COPY . ./
 # Build self packages first
 WORKDIR /workspace/lib/editor
 # TODO: 目前只要app裡的各個file編輯了就需要re-install，應該要將install獨立出來做成cache
-RUN yarn && yarn build
+RUN yarn
 
 # Copy the package.json as well as the package-lock.json and install
 # the dependencies. This is a separate step so the dependencies
