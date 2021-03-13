@@ -10,7 +10,7 @@ spec:
         paths:
           - path: /api
             backend:
-              serviceName: api
+              serviceName: backend
               servicePort: 8080
           - path: /
             backend:
