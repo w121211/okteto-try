@@ -17,7 +17,7 @@ resources:
   - ingress.yml
   - postgres.yml
 images:
-  - name: frontend
-  - name: backend
+  - name: conote-frontend
+  - name: conote-backend
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
