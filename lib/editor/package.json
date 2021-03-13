@@ -1,0 +1,23 @@
+{
+  "name": "@conote/frontend",
+  "scripts": {
+    "migrate": "npx prisma migrate dev --preview-feature",
+    "gen:client": "prisma generate",
+    "gen:schema": "graphql-schema-typescript generate-ts src/schema.gql --output src/schemaTypes.d.ts --typePrefix=''",
+    "seed": "ts-node prisma/seed.ts",
+    "dev": "ts-node-dev --no-notify --respawn --transpile-only src/main.ts",
+    "test": "jest --watchAll",
+    "clean": "rm -rf dist",
+    "generate": "prisma generate",
+    "build": "npm -s run clean && npm -s run generate && tsc -p tsconfig.prod.json",
+    "start": "node dist/main",
+    "studio": "npx prisma studio --experimental",
+    "cron": "ts-node src/cronjobs.ts"
+  },
+  "dependencies": {
+    "dotenv": "^8.2.0"
+  },
+  "engines": {
+    "node": ">=10.0.0"
+  }
+}
